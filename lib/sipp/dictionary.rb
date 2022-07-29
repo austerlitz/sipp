@@ -1,0 +1,2 @@
+module Dictionary
+end
