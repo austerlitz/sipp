@@ -13,16 +13,36 @@ module Sipp
 
     def validate!
       validate_code &&
-      validate_category &&
-      validate_type &&
-      validate_transmission &&
-      validate_fuel_ac
+        validate_category &&
+        validate_type &&
+        validate_transmission &&
+        validate_fuel_ac
     end
 
     def valid?
       validate!
     rescue CodeError, CategoryError, TypeError, TransmissionError, FuelACError
       false
+    end
+
+    def category
+      CATEGORY[code[0]] if valid?
+    end
+
+    def type
+      TYPE[code[1]] if valid?
+    end
+
+    def transmission
+      TRANSMISSION[code[2]] if valid?
+    end
+
+    def fuel_ac
+      FUEL_AC[code[3]] if valid?
+    end
+
+    def to_s
+      [category, type, transmission, fuel_ac].join(' - ')
     end
 
     private
