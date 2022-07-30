@@ -86,6 +86,15 @@ RSpec.describe Sipp::Code do
     describe '#fuel_ac' do
       it { expect(subject.fuel_ac).to eq 'Electric Plus (Distance ≥ 250mi/400km) Air' }
     end
+    describe '#fuel' do
+      it { expect(subject.fuel).to eq 'Electric Plus (Distance ≥ 250mi/400km)' }
+    end
+    describe '#ac' do
+      it { expect(subject.ac).to eq 'Air' }
+    end
+    describe '#ac?' do
+      it { should be_truthy }
+    end
   end
 
   describe '#to_s' do

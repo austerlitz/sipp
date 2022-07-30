@@ -75,6 +75,48 @@ module Sipp
       'U' => 'Ethanol Air',
       'X' => 'Ethanol No Air',
     }
+
+    FUEL = {
+      'R' => 'Unspecified Fuel/Power',
+      'N' => 'Unspecified Fuel/Power',
+      'D' => 'Diesel',
+      'Q' => 'Diesel',
+      'H' => 'Hybrid',
+      'I' => 'Hybrid Plug in',
+      'E' => 'Electric (Distance < 250mi/400km)',
+      'C' => 'Electric Plus (Distance ≥ 250mi/400km)',
+      'L' => 'LPG/Compressed Gas',
+      'S' => 'LPG/Compressed Gas',
+      'A' => 'Hydrogen',
+      'B' => 'Hydrogen',
+      'M' => 'Multi Fuel/Power',
+      'F' => 'Multi fuel/power',
+      'V' => 'Petrol',
+      'Z' => 'Petrol',
+      'U' => 'Ethanol',
+      'X' => 'Ethanol',
+    }
+
+    AC = {
+      'R' => 'Air',
+      'N' => 'No Air',
+      'D' => 'Air',
+      'Q' => 'No Air',
+      'H' => 'Air',
+      'I' => 'Air',
+      'E' => 'Air',
+      'C' => 'Air',
+      'L' => 'Air',
+      'S' => 'No Air',
+      'A' => 'Air',
+      'B' => 'No Air',
+      'M' => 'Air',
+      'F' => 'No Air',
+      'V' => 'Air',
+      'Z' => 'No Air',
+      'U' => 'Air',
+      'X' => 'No Air',
+    }
   end
 end
 

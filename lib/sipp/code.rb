@@ -41,6 +41,18 @@ module Sipp
       FUEL_AC[code[3]] if valid?
     end
 
+    def fuel
+      FUEL[code[3]] if valid?
+    end
+
+    def ac
+      AC[code[3]] if valid?
+    end
+
+    def ac?
+      'Air' == ac ? true : false # TODO fix magic string
+    end
+
     def to_s
       [category, type, transmission, fuel_ac].join(' - ')
     end
