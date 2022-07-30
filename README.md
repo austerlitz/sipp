@@ -21,8 +21,21 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-code = SIPP
+code = SIPP::Code.new 'CCMN'
+code.to_s # "Compact - 2/4 Door - Manual Unspecified Drive - Unspecified Fuel/Power Without Air"
+
+code.ac? # false
 ```
+If the code is invalid, it will return `nil` on all checks.
+
+Calling `code.validate!` will throw validation errors with exceptions.
+
+## TODO
+- add pseudo codes
+- add van codes
+- add i18n helpers
+- add query methods for common checks (like `.diesel?` etc)
+
 
 ## Development
 
