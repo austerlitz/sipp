@@ -1,4 +1,4 @@
-module Sipp
+module SIPP
   module Dictionary
     CATEGORY = {
       'M' => 'Mini',

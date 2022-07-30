@@ -5,7 +5,7 @@ require "sipp/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "sipp"
-  spec.version       = Sipp::VERSION
+  spec.version       = SIPP::VERSION
   spec.authors       = ["Max Buslaev"]
   spec.email         = ["max@buslaev.net"]
 

@@ -1,6 +1,6 @@
 require 'sipp/dictionary'
 
-module Sipp
+module SIPP
   class Code
     include Dictionary
 

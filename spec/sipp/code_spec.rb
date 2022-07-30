@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Sipp::Code do
+RSpec.describe SIPP::Code do
   subject { described_class.new(code) }
   let(:code) { 'CCCC' }
 
@@ -25,7 +25,7 @@ RSpec.describe Sipp::Code do
       it { should_not be_valid }
       it 'raises CodeError with :invalid_code' do
         expect { subject.validate! }.to raise_exception do |error|
-          expect(error).to be_a Sipp::CodeError
+          expect(error).to be_a SIPP::CodeError
           expect(error.message).to eq 'invalid_code'
         end
       end
@@ -35,7 +35,7 @@ RSpec.describe Sipp::Code do
       it { should_not be_valid }
       it 'raises CategoryError with :invalid_category' do
         expect { subject.validate! }.to raise_exception do |error|
-          expect(error).to be_a Sipp::CategoryError
+          expect(error).to be_a SIPP::CategoryError
           expect(error.message).to eq 'invalid_category'
         end
       end
@@ -45,7 +45,7 @@ RSpec.describe Sipp::Code do
       it { should_not be_valid }
       it 'raises TypeError with :invalid_type' do
         expect { subject.validate! }.to raise_exception do |error|
-          expect(error).to be_a Sipp::TypeError
+          expect(error).to be_a SIPP::TypeError
           expect(error.message).to eq 'invalid_type'
         end
       end
@@ -55,7 +55,7 @@ RSpec.describe Sipp::Code do
       it { should_not be_valid }
       it 'raises TransmissionError with :invalid_transmission' do
         expect { subject.validate! }.to raise_exception do |error|
-          expect(error).to be_a Sipp::TransmissionError
+          expect(error).to be_a SIPP::TransmissionError
           expect(error.message).to eq 'invalid_transmission'
         end
       end
@@ -65,7 +65,7 @@ RSpec.describe Sipp::Code do
       it { should_not be_valid }
       it 'raises FuelACError with :invalid_fuel_ac' do
         expect { subject.validate! }.to raise_exception do |error|
-          expect(error).to be_a Sipp::FuelACError
+          expect(error).to be_a SIPP::FuelACError
           expect(error.message).to eq 'invalid_fuel_ac'
         end
       end

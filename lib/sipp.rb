@@ -1,6 +1,6 @@
 require "sipp/version"
 
-module Sipp
+module SIPP
   class Error < StandardError; end
   class CodeError < StandardError; end
   class CategoryError < StandardError; end
