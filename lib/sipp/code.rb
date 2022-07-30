@@ -50,7 +50,11 @@ module SIPP
     end
 
     def ac?
-      'Air' == ac ? true : false # TODO fix magic string
+      if valid?
+        'Air' == ac ? true : false # TODO fix magic string
+      else
+        nil
+      end
     end
 
     def to_s
