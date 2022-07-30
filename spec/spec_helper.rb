@@ -1,5 +1,7 @@
 require "bundler/setup"
 require "sipp"
+require "sipp/code"
+require "sipp/dictionary"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
