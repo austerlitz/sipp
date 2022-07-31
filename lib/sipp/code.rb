@@ -15,13 +15,13 @@ module SIPP
       validate_code &&
         validate_category &&
         validate_type &&
-        validate_transmission &&
+        validate_transmission_drive &&
         validate_fuel_ac
     end
 
     def valid?
       validate!
-    rescue CodeError, CategoryError, TypeError, TransmissionError, FuelACError
+    rescue CodeError, CategoryError, TypeError, TransmissionDriveError, FuelACError
       false
     end
 
@@ -109,9 +109,9 @@ module SIPP
       end
     end
 
-    def validate_transmission
+    def validate_transmission_drive
       if @code[2].blank? || !TRANSMISSION_DRIVE.keys.include?(@code[2])
-        raise TransmissionError, :invalid_transmission
+        raise TransmissionDriveError, :invalid_transmission_drive
       else
         true
       end

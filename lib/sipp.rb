@@ -5,7 +5,7 @@ module SIPP
   class CodeError < StandardError; end
   class CategoryError < StandardError; end
   class TypeError < StandardError; end
-  class TransmissionError < StandardError; end
+  class TransmissionDriveError < StandardError; end
   class FuelACError < StandardError; end
   # Your code goes here...
 end

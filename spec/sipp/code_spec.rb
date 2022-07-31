@@ -50,13 +50,13 @@ RSpec.describe SIPP::Code do
         end
       end
     end
-    context 'with invalid transmission' do
+    context 'with invalid transmission_drive' do
       let(:code) { 'CC0W' }
       it { should_not be_valid }
-      it 'raises TransmissionError with :invalid_transmission' do
+      it 'raises TransmissionError with :invalid_transmission_drive' do
         expect { subject.validate! }.to raise_exception do |error|
-          expect(error).to be_a SIPP::TransmissionError
-          expect(error.message).to eq 'invalid_transmission'
+          expect(error).to be_a SIPP::TransmissionDriveError
+          expect(error.message).to eq 'invalid_transmission_drive'
         end
       end
     end
