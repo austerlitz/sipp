@@ -33,7 +33,7 @@ Calling `code.validate!` will throw validation errors with exceptions.
 ## TODO
 - add pseudo codes
 - add van codes
-- add i18n helpers
+- add i18n helpers or redo strings into symbols to be i18n-ised
 - add query methods for common checks (like `.diesel?` etc)
 
 
