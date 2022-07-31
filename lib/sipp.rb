@@ -10,6 +10,6 @@ module SIPP
   # Your code goes here...
 end
 
-require 'active_support/all'
+require 'active_support/core_ext/object'
 require "sipp/code"
 require "sipp/dictionary"
