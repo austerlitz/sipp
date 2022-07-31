@@ -33,8 +33,30 @@ module SIPP
       TYPE[code[1]] if valid?
     end
 
+    def transmission_drive
+      TRANSMISSION_DRIVE[code[2]] if valid?
+    end
+
     def transmission
       TRANSMISSION[code[2]] if valid?
+    end
+
+    def transmission_manual?
+      if valid?
+        'Manual' == transmission ? true : false # TODO fix magic string
+      else
+        nil
+      end
+    end
+    def transmission_auto?
+      if valid?
+        'Auto' == transmission ? true : false # TODO fix magic string
+      else
+        nil
+      end
+    end
+    def drive
+      DRIVE[code[2]] if valid?
     end
 
     def fuel_ac
@@ -58,7 +80,7 @@ module SIPP
     end
 
     def to_s
-      [category, type, transmission, fuel_ac].join(' - ')
+      [category, type, transmission_drive, fuel_ac].join(' - ')
     end
 
     private
@@ -88,7 +110,7 @@ module SIPP
     end
 
     def validate_transmission
-      if @code[2].blank? || !TRANSMISSION.keys.include?(@code[2])
+      if @code[2].blank? || !TRANSMISSION_DRIVE.keys.include?(@code[2])
         raise TransmissionError, :invalid_transmission
       else
         true

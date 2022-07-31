@@ -46,13 +46,30 @@ module SIPP
       'K' => 'Commercial Van/Truck',
     }
 
-    TRANSMISSION = {
+    TRANSMISSION_DRIVE = {
       'M' => 'Manual Unspecified Drive',
       'N' => 'Manual 4WD',
       'C' => 'Manual AWD',
       'A' => 'Auto Unspecified Drive',
       'B' => 'Auto 4WD',
       'D' => 'Auto AWD',
+    }
+    TRANSMISSION = {
+      'M' => 'Manual',
+      'N' => 'Manual',
+      'C' => 'Manual',
+      'A' => 'Auto',
+      'B' => 'Auto',
+      'D' => 'Auto',
+    }
+
+    DRIVE = {
+      'M' => 'Unspecified',
+      'N' => '4WD',
+      'C' => 'AWD',
+      'A' => 'Unspecified',
+      'B' => '4WD',
+      'D' => 'AWD',
     }
 
     FUEL_AC = {

@@ -80,8 +80,20 @@ RSpec.describe SIPP::Code do
     describe '#type' do
       it { expect(subject.type).to eq '2/4 Door' }
     end
+    describe '#transmission_drive' do
+      it { expect(subject.transmission_drive).to eq 'Manual AWD' }
+    end
     describe '#transmission' do
-      it { expect(subject.transmission).to eq 'Manual AWD' }
+      it { expect(subject.transmission).to eq 'Manual' }
+    end
+    describe '#transmission_manual?' do
+      it { expect(subject.transmission_manual?).to be_truthy }
+    end
+    describe '#transmission_auto?' do
+      it { expect(subject.transmission_auto?).to be_falsey }
+    end
+    describe '#drive' do
+      it { expect(subject.drive).to eq 'AWD' }
     end
     describe '#fuel_ac' do
       it { expect(subject.fuel_ac).to eq 'Electric Plus (Distance ≥ 250mi/400km) Air' }
