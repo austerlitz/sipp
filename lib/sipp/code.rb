@@ -80,7 +80,7 @@ module SIPP
     end
 
     def to_s
-      [category, type, transmission_drive, fuel_ac].join(' - ')
+      [category, type, transmission_drive, fuel_ac].join(' - ') if valid?
     end
 
     private
