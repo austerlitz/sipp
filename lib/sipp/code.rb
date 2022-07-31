@@ -7,7 +7,7 @@ module SIPP
     attr_reader :code
 
     def initialize(code = nil)
-      @code = code.to_s.upcase
+      @code = code.to_s.strip.upcase
 
     end
 
