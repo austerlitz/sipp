@@ -134,5 +134,9 @@ RSpec.describe SIPP::Code do
     it 'returns human-readable code description' do
       expect(subject.to_s).to eq 'Compact - 2/4 Door - Manual 4WD - Petrol Air'
     end
+
+    it 'for invalid codes puts "#N/A", the rest is translated' do
+      expect(SIPP::Code.new('99DD').to_s).to eq "#N/A - #N/A - Auto AWD - Diesel Air"
+    end
   end
 end

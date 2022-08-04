@@ -103,7 +103,9 @@ module SIPP
     end
 
     def to_s
-      [category, type, transmission_drive, fuel_ac].join(' - ') if valid?
+      [category, type, transmission_drive, fuel_ac].map{|c| c.nil? ? '#N/A' : c}.join(' - ')
+    rescue CodeError, CategoryError, TypeError, TransmissionDriveError, FuelACError
+      ''
     end
 
     private
