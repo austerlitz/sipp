@@ -24,9 +24,26 @@ Or install it yourself as:
 code = SIPP::Code.new 'CCMN'
 code.to_s # "Compact - 2/4 Door - Manual Unspecified Drive - Unspecified Fuel/Power Without Air"
 
+code.category # Compact
+code.type # 2/4 Door
+code.transmission_drive # Manual Unspecified Drive
+code.transmission # Manual
+code.drive # Unspecified Drive
+code.transmission_manual? # true
+code.transmission_auto? # false
+code.fuel_ac # Unspecified Fuel/Power Without Air
+code.fuel # Unspecified Fuel/Power
+code.ac # No Air
 code.ac? # false
 ```
 If the code is invalid, it will return `nil` on all checks.
+
+If only some of the letters are valid, it will translate them:
+```ruby
+code = SIPP::Code.new '**DR'
+code.valid? # false
+code.to_s # #N/A - #N/A - Auto AWD - Unspecified Fuel/Power With Air
+```
 
 Calling `code.validate!` will throw validation errors with exceptions.
 
