@@ -109,6 +109,26 @@ RSpec.describe SIPP::Code do
     end
   end
 
+  context 'with only some letters valid' do
+    it 'translates valid letters' do
+      expect(SIPP::Code.new('XXXX').valid?).to be_falsey
+      expect(SIPP::Code.new('XXXX').category).to eq 'Special'
+      expect(SIPP::Code.new('XXXX').type).to eq 'Special'
+      expect(SIPP::Code.new('99A9').valid?).to be_falsey
+      expect(SIPP::Code.new('99A9').transmission_drive).to eq 'Auto Unspecified Drive'
+      expect(SIPP::Code.new('99A9').transmission).to eq 'Auto'
+      expect(SIPP::Code.new('99A9').transmission_auto?).to be_truthy
+      expect(SIPP::Code.new('99A9').transmission_manual?).to be_falsey
+      expect(SIPP::Code.new('99A9').drive).to eq 'Unspecified'
+
+      expect(SIPP::Code.new('999D').valid?).to be_falsey
+      expect(SIPP::Code.new('999D').fuel_ac).to eq 'Diesel Air'
+      expect(SIPP::Code.new('999D').fuel).to eq 'Diesel'
+      expect(SIPP::Code.new('999D').ac).to eq 'Air'
+      expect(SIPP::Code.new('999D').ac?).to be_truthy
+    end
+  end
+
   describe '#to_s' do
     let(:code) { 'CCNV' }
     it 'returns human-readable code description' do

@@ -26,57 +26,80 @@ module SIPP
     end
 
     def category
-      CATEGORY[code[0]] if valid?
+      validate_category
+      CATEGORY[code[0]]
+    rescue CategoryError => e
+      nil
     end
 
     def type
-      TYPE[code[1]] if valid?
+      validate_type
+      TYPE[code[1]]
+    rescue TypeError => e
+      nil
     end
 
     def transmission_drive
-      TRANSMISSION_DRIVE[code[2]] if valid?
+      validate_transmission_drive
+      TRANSMISSION_DRIVE[code[2]]
+    rescue TransmissionDriveError => e
+      nil
     end
 
     def transmission
-      TRANSMISSION[code[2]] if valid?
+      validate_transmission_drive
+      TRANSMISSION[code[2]]
+    rescue TransmissionDriveError => e
+      nil
     end
 
     def transmission_manual?
-      if valid?
-        'Manual' == transmission ? true : false # TODO fix magic string
-      else
-        nil
-      end
+      validate_transmission_drive
+      'Manual' == transmission ? true : false # TODO fix magic string
+    rescue TransmissionDriveError => e
+      nil
     end
+
     def transmission_auto?
-      if valid?
-        'Auto' == transmission ? true : false # TODO fix magic string
-      else
-        nil
-      end
+      validate_transmission_drive
+      'Auto' == transmission ? true : false # TODO fix magic string
+    rescue TransmissionDriveError => e
+      nil
     end
+
     def drive
-      DRIVE[code[2]] if valid?
+      validate_transmission_drive
+      DRIVE[code[2]]
+    rescue TransmissionDriveError => e
+      nil
     end
 
     def fuel_ac
-      FUEL_AC[code[3]] if valid?
+      validate_fuel_ac
+      FUEL_AC[code[3]]
+    rescue FuelACError => e
+      nil
     end
 
     def fuel
-      FUEL[code[3]] if valid?
+      validate_fuel_ac
+      FUEL[code[3]]
+    rescue FuelACError => e
+      nil
     end
 
     def ac
-      AC[code[3]] if valid?
+      validate_fuel_ac
+      AC[code[3]]
+    rescue FuelACError => e
+      nil
     end
 
     def ac?
-      if valid?
-        'Air' == ac ? true : false # TODO fix magic string
-      else
-        nil
-      end
+      validate_fuel_ac
+      'Air' == ac ? true : false # TODO fix magic string
+    rescue FuelACError => e
+      nil
     end
 
     def to_s
