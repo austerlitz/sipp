@@ -1,8 +1,10 @@
 require 'sipp/dictionary'
+require 'sipp/localiser'
 
 module SIPP
   class Code
     include Dictionary
+    include Localiser
 
     attr_reader :code
 
@@ -27,77 +29,77 @@ module SIPP
 
     def category
       validate_category
-      CATEGORY[code[0]]
+      t :category, CATEGORY[code[0]]
     rescue CategoryError => e
       nil
     end
 
     def type
       validate_type
-      TYPE[code[1]]
+      t :type, TYPE[code[1]]
     rescue TypeError => e
       nil
     end
 
     def transmission_drive
       validate_transmission_drive
-      TRANSMISSION_DRIVE[code[2]]
+      t :transmission_drive, TRANSMISSION_DRIVE[code[2]]
     rescue TransmissionDriveError => e
       nil
     end
 
     def transmission
       validate_transmission_drive
-      TRANSMISSION[code[2]]
+      t :transmission, TRANSMISSION[code[2]]
     rescue TransmissionDriveError => e
       nil
     end
 
     def transmission_manual?
       validate_transmission_drive
-      'Manual' == transmission ? true : false # TODO fix magic string
+      :manual == TRANSMISSION[code[2]] ? true : false
     rescue TransmissionDriveError => e
       nil
     end
 
     def transmission_auto?
       validate_transmission_drive
-      'Auto' == transmission ? true : false # TODO fix magic string
+      :auto == TRANSMISSION[code[2]] ? true : false
     rescue TransmissionDriveError => e
       nil
     end
 
     def drive
       validate_transmission_drive
-      DRIVE[code[2]]
+      t :drive, DRIVE[code[2]]
     rescue TransmissionDriveError => e
       nil
     end
 
     def fuel_ac
       validate_fuel_ac
-      FUEL_AC[code[3]]
+      t :fuel_ac, FUEL_AC[code[3]]
     rescue FuelACError => e
       nil
     end
 
     def fuel
       validate_fuel_ac
-      FUEL[code[3]]
+      t :fuel, FUEL[code[3]]
     rescue FuelACError => e
       nil
     end
 
     def ac
       validate_fuel_ac
-      AC[code[3]]
+      t :ac, AC[code[3]]
     rescue FuelACError => e
       nil
     end
 
     def ac?
       validate_fuel_ac
-      'Air' == ac ? true : false # TODO fix magic string
+      :air == AC[code[3]] ? true : false
     rescue FuelACError => e
       nil
     end

@@ -1,0 +1,100 @@
+en:
+  sipp:
+    category:
+      mini: Mini
+      mini_elite: Mini Elite
+      economy: Economy
+      economy_elite: Economy Elite
+      compact: Compact
+      compact_elite: Compact Elite
+      intermediate: Intermediate
+      intermediate_elite: Intermediate Elite
+      standard: Standard
+      standard_elite: Standard Elite
+      fullsize: Fullsize
+      fullsize_elite: Fullsize Elite
+      premium: Premium
+      premium_elite: Premium Elite
+      luxury: Luxury
+      luxury_elite: Luxury Elite
+      oversize: Oversize
+      special: Special
+
+    type:
+      two_three_door: 2-3 Door
+      two_four_door: 2/4 Door
+      four_five_door: 4-5 Door
+      wagon_estate: Wagon/Estate
+      passenger_van: Passenger Van
+      limousine_sedan: Limousine/Sedan
+      sport: Sport
+      convertible: Convertible
+      suv: SUV
+      open_air_all_terrain: Open Air All Terrain
+      special: Special
+      pick_up_2_door: Pick up (single/extended cab) 2 door
+      pick_up_4_door: Pick up (double cab) 4 door
+      special_offer_car: Special Offer Car
+      coupe: Coupe
+      monospace: Monospace
+      recreational_vehicle: Recreational Vehicle
+      motor_home: Motor Home
+      two_wheel_vehicle: 2 Wheel Vehicle
+      roadster: Roadster
+      crossover: Crossover
+      commercial: Commercial Van/Truck
+
+    transmission_drive:
+      manual_unspecified_drive: Manual Unspecified Drive
+      manual_4wd: Manual 4WD
+      manual_awd: Manual AWD
+      auto_unspecified_drive: Auto Unspecified Drive
+      auto_4wd: Auto 4WD
+      auto_awd: Auto AWD
+
+    transmission:
+      manual: Manual
+      auto: Auto
+
+    drive:
+      unspecified: Unspecified
+      four_wd: 4WD
+      awd: AWD
+
+    fuel_ac:
+      unspecified_air: Unspecified Fuel/Power With Air
+      unspecified_no_air: Unspecified Fuel/Power Without Air
+      diesel_air: Diesel Air
+      diesel_no_air: Diesel No Air
+      hybrid_air: Hybrid Air
+      hybrid_plug_in_air: Hybrid Plug in Air
+      electric_air: Electric (Distance < 250mi/400km) Air
+      electric_plus_air: Electric Plus (Distance ≥ 250mi/400km) Air
+      compressed_gas_air: LPG/Compressed Gas Air
+      compressed_gas_no_air: LPG/Compressed Gas No Air
+      hydrogen_air: Hydrogen Air
+      hydrogen_no_air: Hydrogen No Air
+      multi_fuel_air: Multi Fuel/Power Air
+      multi_fuel_no_air: Multi fuel/power No Air
+      petrol_air: Petrol Air
+      petrol_no_air: Petrol No Air
+      ethanol_air: Ethanol Air
+      ethanol_no_air: Ethanol No Air
+
+    fuel:
+      unspecified: Unspecified Fuel/Power
+      diesel: Diesel
+      hybrid: Hybrid
+      hybrid_plug_in: Hybrid Plug in
+      electric: Electric (Distance < 250mi/400km)
+      electric_plus: Electric Plus (Distance ≥ 250mi/400km)
+      compressed_gas: LPG/Compressed Gas
+      hydrogen: Hydrogen
+      multi_fuel: Multi fuel/power
+      petrol: Petrol
+      ethanol: Ethanol
+
+    ac:
+      air: Air
+      no_air: No Air
+
