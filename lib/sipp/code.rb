@@ -29,77 +29,77 @@ module SIPP
 
     def category
       validate_category
-      t :category, CATEGORY[code[0]]
+      Category.new CATEGORY[code[0]]
     rescue CategoryError => e
       nil
     end
 
     def type
       validate_type
-      t :type, TYPE[code[1]]
+      Type.new TYPE[code[1]]
     rescue TypeError => e
       nil
     end
 
     def transmission_drive
       validate_transmission_drive
-      t :transmission_drive, TRANSMISSION_DRIVE[code[2]]
+      TransmissionDrive.new TRANSMISSION_DRIVE[code[2]]
     rescue TransmissionDriveError => e
       nil
     end
 
     def transmission
       validate_transmission_drive
-      t :transmission, TRANSMISSION[code[2]]
+      Transmission.new TRANSMISSION[code[2]]
     rescue TransmissionDriveError => e
       nil
     end
 
     def transmission_manual?
       validate_transmission_drive
-      :manual == TRANSMISSION[code[2]] ? true : false
+      :manual == transmission.to_sym ? true : false
     rescue TransmissionDriveError => e
       nil
     end
 
     def transmission_auto?
       validate_transmission_drive
-      :auto == TRANSMISSION[code[2]] ? true : false
+      :auto == transmission.to_sym ? true : false
     rescue TransmissionDriveError => e
       nil
     end
 
     def drive
       validate_transmission_drive
-      t :drive, DRIVE[code[2]]
+      Drive.new DRIVE[code[2]]
     rescue TransmissionDriveError => e
       nil
     end
 
     def fuel_ac
       validate_fuel_ac
-      t :fuel_ac, FUEL_AC[code[3]]
+      FuelAC.new FUEL_AC[code[3]]
     rescue FuelACError => e
       nil
     end
 
     def fuel
       validate_fuel_ac
-      t :fuel, FUEL[code[3]]
+      Fuel.new FUEL[code[3]]
     rescue FuelACError => e
       nil
     end
 
     def ac
       validate_fuel_ac
-      t :ac, AC[code[3]]
+      Ac.new AC[code[3]]
     rescue FuelACError => e
       nil
     end
 
     def ac?
       validate_fuel_ac
-      :air == AC[code[3]] ? true : false
+      :air == ac.to_sym ? true : false
     rescue FuelACError => e
       nil
     end

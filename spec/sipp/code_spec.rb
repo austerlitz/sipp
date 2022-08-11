@@ -75,16 +75,16 @@ RSpec.describe SIPP::Code do
   context 'with code as "CCCC"' do
     let(:code) { 'CCCC' }
     describe '#category' do
-      it { expect(subject.category).to eq 'Compact' }
+      it { expect(subject.category.to_s).to eq 'Compact' }
     end
     describe '#type' do
-      it { expect(subject.type).to eq '2/4 Door' }
+      it { expect(subject.type.to_s).to eq '2/4 Door' }
     end
     describe '#transmission_drive' do
-      it { expect(subject.transmission_drive).to eq 'Manual AWD' }
+      it { expect(subject.transmission_drive.to_s).to eq 'Manual AWD' }
     end
     describe '#transmission' do
-      it { expect(subject.transmission).to eq 'Manual' }
+      it { expect(subject.transmission.to_s).to eq 'Manual' }
     end
     describe '#transmission_manual?' do
       it { expect(subject.transmission_manual?).to be_truthy }
@@ -93,16 +93,16 @@ RSpec.describe SIPP::Code do
       it { expect(subject.transmission_auto?).to be_falsey }
     end
     describe '#drive' do
-      it { expect(subject.drive).to eq 'AWD' }
+      it { expect(subject.drive.to_s).to eq 'AWD' }
     end
     describe '#fuel_ac' do
-      it { expect(subject.fuel_ac).to eq 'Electric Plus (Distance ≥ 250mi/400km) Air' }
+      it { expect(subject.fuel_ac.to_s).to eq 'Electric Plus (Distance ≥ 250mi/400km) Air' }
     end
     describe '#fuel' do
-      it { expect(subject.fuel).to eq 'Electric Plus (Distance ≥ 250mi/400km)' }
+      it { expect(subject.fuel.to_s).to eq 'Electric Plus (Distance ≥ 250mi/400km)' }
     end
     describe '#ac' do
-      it { expect(subject.ac).to eq 'Air' }
+      it { expect(subject.ac.to_s).to eq 'Air' }
     end
     describe '#ac?' do
       it { should be_truthy }
@@ -112,19 +112,19 @@ RSpec.describe SIPP::Code do
   context 'with only some letters valid' do
     it 'translates valid letters' do
       expect(SIPP::Code.new('XXXX').valid?).to be_falsey
-      expect(SIPP::Code.new('XXXX').category).to eq 'Special'
-      expect(SIPP::Code.new('XXXX').type).to eq 'Special'
+      expect(SIPP::Code.new('XXXX').category.to_s).to eq 'Special'
+      expect(SIPP::Code.new('XXXX').type.to_s).to eq 'Special'
       expect(SIPP::Code.new('99A9').valid?).to be_falsey
-      expect(SIPP::Code.new('99A9').transmission_drive).to eq 'Auto Unspecified Drive'
-      expect(SIPP::Code.new('99A9').transmission).to eq 'Auto'
+      expect(SIPP::Code.new('99A9').transmission_drive.to_s).to eq 'Auto Unspecified Drive'
+      expect(SIPP::Code.new('99A9').transmission.to_s).to eq 'Auto'
       expect(SIPP::Code.new('99A9').transmission_auto?).to be_truthy
       expect(SIPP::Code.new('99A9').transmission_manual?).to be_falsey
-      expect(SIPP::Code.new('99A9').drive).to eq 'Unspecified'
+      expect(SIPP::Code.new('99A9').drive.to_s).to eq 'Unspecified'
 
       expect(SIPP::Code.new('999D').valid?).to be_falsey
-      expect(SIPP::Code.new('999D').fuel_ac).to eq 'Diesel Air'
-      expect(SIPP::Code.new('999D').fuel).to eq 'Diesel'
-      expect(SIPP::Code.new('999D').ac).to eq 'Air'
+      expect(SIPP::Code.new('999D').fuel_ac.to_s).to eq 'Diesel Air'
+      expect(SIPP::Code.new('999D').fuel.to_s).to eq 'Diesel'
+      expect(SIPP::Code.new('999D').ac.to_s).to eq 'Air'
       expect(SIPP::Code.new('999D').ac?).to be_truthy
     end
   end
