@@ -1,13 +1,13 @@
 require "sipp/version"
 
 module SIPP
-  class Error < StandardError; end
-  class CodeError < StandardError; end
-  class CategoryError < StandardError; end
-  class TypeError < StandardError; end
-  class TransmissionDriveError < StandardError; end
-  class FuelACError < StandardError; end
-  # Your code goes here...
+  Error = Class.new StandardError
+  CodeError = Class.new Error
+  CategoryError = Class.new Error
+  TypeError = Class.new Error
+  TransmissionDriveError = Class.new Error
+  FuelACError = Class.new Error
+
 end
 
 require 'active_support/core_ext/object'
