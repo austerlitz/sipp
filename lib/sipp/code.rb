@@ -4,7 +4,6 @@ require 'sipp/localiser'
 module SIPP
   class Code
     include Dictionary
-    include Localiser
 
     attr_reader :code
 
