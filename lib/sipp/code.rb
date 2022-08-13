@@ -109,6 +109,10 @@ module SIPP
       ''
     end
 
+    def as_json(options = nil)
+      [category, type, transmission, drive, fuel, ac].map(&:as_json).inject(&:merge).merge({code: @code})
+    end
+
     private
 
     def validate_code
