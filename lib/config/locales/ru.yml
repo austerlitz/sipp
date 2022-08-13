@@ -1,0 +1,100 @@
+ru:
+  sipp:
+    category:
+      mini: мини
+      mini_elite: мини элит
+      economy: эконом
+      economy_elite: эконом элит
+      compact: компакт
+      compact_elite: компакт элит
+      intermediate: средний
+      intermediate_elite: средний элит
+      standard: стандартный
+      standard_elite: стандартный элит
+      fullsize: полноразмерный
+      fullsize_elite: полноразмерный элит
+      premium: премиум
+      premium_elite: premium элит
+      luxury: люкс
+      luxury_elite: люкс элит
+      oversize: оверсайз
+      special: специальный
+
+    type:
+      two_three_door: 2-3 двери
+      two_four_door: 2/4 двери
+      four_five_door: 4-5 двери
+      wagon_estate: универсал
+      passenger_van: пассажирский фургон
+      limousine_sedan: седан
+      sport: спорт
+      convertible: кабриолет
+      suv: SUV
+      open_air_all_terrain: внедорожник
+      special: специального назначения
+      pick_up_2_door: двухдверный пикап
+      pick_up_4_door: четырехдверный пикап
+      special_offer_car: автомобиль спецпредложения
+      coupe: купе
+      monospace: однообъемник
+      recreational_vehicle: автомобиль для отдыха
+      motor_home: дом на колесах
+      two_wheel_vehicle: двухколесное транспортное средство
+      roadster: родстер
+      crossover: кроссовер
+      commercial: коммерческий фургон
+
+    transmission_drive:
+      manual_unspecified_drive: МКПП, привод не указан
+      manual_4wd: МКПП, 4WD
+      manual_awd: МКПП, AWD
+      auto_unspecified_drive: АКПП, привод не указан
+      auto_4wd: АКПП, 4WD
+      auto_awd: АКПП, AWD
+
+    transmission:
+      manual: МКПП
+      auto: АКПП
+
+    drive:
+      unspecified: привод не указан
+      four_wd: 4WD
+      awd: AWD
+
+    fuel_ac:
+      unspecified_air: топливо не указано, кондиционер
+      unspecified_no_air: топливо не указано, без кондиционера
+      diesel_air: дизель, кондиционер
+      diesel_no_air: дизель, без кондиционера
+      hybrid_air: гибрид, кондиционер
+      hybrid_plug_in_air: гибрид с подзарядкой, кондиционер
+      electric_air: электрический (до  250 миль/400 км), кондиционер
+      electric_plus_air: электрический плюс (от 250 миль/400 км), кондиционер
+      compressed_gas_air: сжиженный газ, кондиционер
+      compressed_gas_no_air: сжиженный газ, без кондиционера
+      hydrogen_air: водород, кондиционер
+      hydrogen_no_air: водород, без кондиционера
+      multi_fuel_air: мультитопливный, кондиционер
+      multi_fuel_no_air: мультитопливный, без кондиционера
+      petrol_air: бензин, кондиционер
+      petrol_no_air: бензин, без кондиционера
+      ethanol_air: спирт, кондиционер
+      ethanol_no_air: спирт, без кондиционера
+
+    fuel:
+      unspecified: топливо не указано
+      diesel: дизель
+      hybrid: гибрид
+      hybrid_plug_in: гибрид с подзарядкой
+      electric: электрический (до  250 миль/400 км)
+      electric_plus: электрический плюс (от 250 миль/400 км)
+      compressed_gas: сжиженный газ
+      hydrogen: водород
+      multi_fuel: мультитопливный
+      petrol: бензин
+      ethanol: спирт
+
+    ac:
+      air: кондиционер
+      no_air: без кондиционера
+
