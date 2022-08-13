@@ -11,16 +11,25 @@ module SIPP
 
   class SIPPCodeWrapper
     include Localiser
+
     def initialize(symbol)
       @sym = symbol
     end
 
     def to_s
-      t self.class.name.split('::').last.underscore, @sym
+      t klass, @sym
+    end
+
+    def klass
+      self.class.name.split('::').last.underscore
     end
 
     def to_sym
       @sym
+    end
+
+    def as_json
+      { klass.to_sym => @sym }
     end
   end
 
