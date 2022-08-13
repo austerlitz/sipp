@@ -17,11 +17,15 @@ module SIPP
     end
 
     def to_s
-      t klass, @sym
+      t klass_name, @sym
     end
 
-    def klass
-      self.class.name.split('::').last.underscore
+    def klass_name
+      self.class.name.split('::').last
+          .gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2')
+          .gsub(/([a-z\d])([A-Z])/, '\1_\2')
+          .tr(' ', '_')
+          .downcase
     end
 
     def to_sym
@@ -29,7 +33,7 @@ module SIPP
     end
 
     def as_json
-      { klass.to_sym => @sym }
+      { klass_name.to_sym => @sym }
     end
   end
 
@@ -42,8 +46,8 @@ module SIPP
   Fuel              = Class.new SIPPCodeWrapper
   Ac                = Class.new SIPPCodeWrapper
 end
-require 'active_support/core_ext/object'
 require "sipp/code"
 require "sipp/dictionary"
+require 'i18n'
 I18n.load_path << Dir[File.expand_path("lib/config/locales") + "/*.yml"]
 # I18n.available_locales = [:en, :ru]

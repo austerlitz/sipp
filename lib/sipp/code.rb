@@ -116,7 +116,7 @@ module SIPP
     private
 
     def validate_code
-      if @code.blank? || 4 != @code.length
+      if !@code || @code.empty? || 4 != @code.length
         raise CodeError, :invalid_code
       else
         true
@@ -124,7 +124,7 @@ module SIPP
     end
 
     def validate_category
-      if @code[0].blank? || !CATEGORY.keys.include?(@code[0])
+      if !@code[0] || @code[0].empty? || !CATEGORY.keys.include?(@code[0])
         raise CategoryError, :invalid_category
       else
         true
@@ -132,7 +132,7 @@ module SIPP
     end
 
     def validate_type
-      if @code[1].blank? || !TYPE.keys.include?(@code[1])
+      if !@code[1] || @code[1].empty? || !TYPE.keys.include?(@code[1])
         raise TypeError, :invalid_type
       else
         true
@@ -140,7 +140,7 @@ module SIPP
     end
 
     def validate_transmission_drive
-      if @code[2].blank? || !TRANSMISSION_DRIVE.keys.include?(@code[2])
+      if !@code[2] || @code[2].empty? || !TRANSMISSION_DRIVE.keys.include?(@code[2])
         raise TransmissionDriveError, :invalid_transmission_drive
       else
         true
@@ -148,7 +148,7 @@ module SIPP
     end
 
     def validate_fuel_ac
-      if @code[3].blank? || !FUEL_AC.keys.include?(@code[3])
+      if !@code[3] || @code[3].empty? || !FUEL_AC.keys.include?(@code[3])
         raise FuelACError, :invalid_fuel_ac
       else
         true
