@@ -24,16 +24,16 @@ Or install it yourself as:
 code = SIPP::Code.new 'CCMN'
 code.to_s # "Compact - 2/4 Door - Manual Unspecified Drive - Unspecified Fuel/Power Without Air"
 
-code.category # Compact
-code.type # 2/4 Door
-code.transmission_drive # Manual Unspecified Drive
-code.transmission # Manual
-code.drive # Unspecified Drive
+code.category.to_s # Compact
+code.type.to_s # 2/4 Door
+code.transmission_drive.to_s # Manual Unspecified Drive
+code.transmission.to_s # Manual
+code.drive.to_s # Unspecified Drive
 code.transmission_manual? # true
 code.transmission_auto? # false
-code.fuel_ac # Unspecified Fuel/Power Without Air
-code.fuel # Unspecified Fuel/Power
-code.ac # No Air
+code.fuel_ac.to_s # Unspecified Fuel/Power Without Air
+code.fuel.to_s # Unspecified Fuel/Power
+code.ac.to_s # No Air
 code.ac? # false
 ```
 If the code is invalid, it will return `nil` on all checks.
@@ -47,11 +47,54 @@ code.to_s # #N/A - #N/A - Auto AWD - Unspecified Fuel/Power With Air
 
 Calling `code.validate!` will throw validation errors with exceptions.
 
+### #as_json
+A convenient hash that lists car capabilities.
+```ruby
+ SIPP::Code.new('CCDD').as_json
+{
+      category: :compact,
+          type: :two_four_door,
+  transmission: :auto,
+         drive: :awd,
+          fuel: :diesel,
+            ac: :air,
+          code: "CCDD"
+}
+
+```
+
+## I18n
+For more flexibility methods like `category`, `drive` etc. return a simple 
+Wrapper object to provide either symbol or a i18n-sed string. 
+Thus, when `#to_s` is implied, it will return a translated message. 
+For use in code or elsewhere, use `#to_sym`:
+```ruby
+if :diesel == code.fuel.to_sym
+  puts 'This car has a diesel engine'
+end
+```
+
+_This seems to be not an elegant solution. If you have any ideas on improving it, please make a pull request._
+
+You can override existing or add your own translations an put them under the 
+`sipp` scope:
+```yaml
+ua:
+  sipp:
+    category:
+      mini: міні
+    type:
+      convertible: кабріолет
+    transmission:
+      manual: МКПП
+      auto: АКПП      
+```
+
 ## TODO
-- add pseudo codes
-- add van codes
-- add i18n helpers or redo strings into symbols to be i18n-ised
-- add query methods for common checks (like `.diesel?` etc)
+- [x] add i18n helpers or redo strings into symbols to be i18n-sed
+- [ ] add pseudo codes
+- [ ] add van codes
+- [ ] add query methods for common checks (like `.diesel?` etc)
 
 
 ## Development
