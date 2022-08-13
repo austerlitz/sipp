@@ -8,9 +8,3 @@ gemspec
 gem 'activesupport', '~> 4.1'
 gem 'i18n'
 
-group :development do
-  gem 'awesome_print'
-  gem 'pry-rails'
-  gem 'pry-theme'
-  gem 'pry-stack_explorer'
-end
