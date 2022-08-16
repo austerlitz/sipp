@@ -110,7 +110,7 @@ module SIPP
     end
 
     def as_json(options = nil)
-      [category, type, transmission, drive, fuel, ac].map(&:as_json).inject(&:merge).merge({code: @code})
+      [category, type, transmission, drive, fuel, ac].compact.map(&:as_json).inject(&:merge).merge({code: @code})
     end
 
     private
