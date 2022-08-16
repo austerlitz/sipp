@@ -64,8 +64,11 @@ A convenient hash that lists car capabilities.
 ```
 
 ## I18n
+
+**NOTE**: a simpler version without i18n is kept in `v.1.4`, you can use it as `gem 'sipp', git: 'https://github.com/austerlitz/sipp.git', tag: 'v1.4'`
+
 For more flexibility methods like `category`, `drive` etc. return a simple 
-Wrapper object to provide either symbol or a i18n-sed string. 
+Wrapper object to provide either symbol or an i18n-sed string. 
 Thus, when `#to_s` is implied, it will return a translated message. 
 For use in code or elsewhere, use `#to_sym`:
 ```ruby
@@ -75,6 +78,7 @@ end
 ```
 
 _This seems to be not an elegant solution. If you have any ideas on improving it, please make a pull request._
+
 
 You can override existing or add your own translations an put them under the 
 `sipp` scope:
