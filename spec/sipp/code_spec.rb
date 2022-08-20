@@ -130,13 +130,24 @@ RSpec.describe SIPP::Code do
   end
 
   describe '#to_s' do
+    before {I18n.locale = :en}
     let(:code) { 'CCNV' }
     it 'returns human-readable code description' do
       expect(subject.to_s).to eq 'Compact - 2/4 Door - Manual 4WD - Petrol Air'
     end
 
+    it 'is aware of current locale' do
+      I18n.locale = :ru
+      expect(subject.to_s).to eq 'компакт - 2/4 двери - МКПП, 4WD - бензин, кондиционер'
+    end
+
     it 'for invalid codes puts "#N/A", the rest is translated' do
       expect(SIPP::Code.new('99DD').to_s).to eq "#N/A - #N/A - Auto AWD - Diesel Air"
     end
+
+  end
+
+  describe '#as_json' do
+
   end
 end
