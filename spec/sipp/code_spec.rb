@@ -148,6 +148,13 @@ RSpec.describe SIPP::Code do
   end
 
   describe '#as_json' do
-
+    let(:code) { 'CCNV' }
+    it 'returns a hash with car capabilities' do
+      expect(subject.as_json).to be_a Hash
+      expect(subject.as_json.keys).to eq %i[category type transmission drive fuel ac code]
+    end
+    it 'returns only valid codes and skips invalid ones altogether' do
+      expect(SIPP::Code.new('99DD').as_json.keys).to eq %i[transmission drive fuel ac code]
+    end
   end
 end
