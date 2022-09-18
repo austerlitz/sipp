@@ -107,12 +107,52 @@ SIPP::Inverted.generate({ category: :compact, type: :two_four_door, fuel: :petro
 # => 'CC*V'
 ```
 
+## Extended
+
+Works most similar to Inverted but produces a more consistent approach to encoding car capabilities.
+
+Generates an Extended-SIPP code from capabilities provided and translates capabilities list into an Extended-SIPP code.
+
+Should be tried and discussed.
+
+```ruby
+SIPP::Extended.new('CCMFDA55').as_json
+
+{
+        category:     :compact,
+        type:         :two_four_door,
+        transmission: :manual,
+        drive:        :front,
+        fuel:         :diesel,
+        ac:           :air,
+        doors:        5,
+        seats:        5,
+        bags_big:     :unspecified,
+        bags_small:   :unspecified,
+}
+
+SIPP::Extended.new('CBMFPN2234').as_json
+{
+        category:     :compact,
+        type:         :two_three_door,
+        transmission: :manual,
+        drive:        :front,
+        fuel:         :petrol,
+        ac:           :no_air,
+        doors:        2,
+        seats:        2,
+        bags_big:     3,
+        bags_small:   4,
+}
+
+```
 
 ## TODO
 - [x] add i18n helpers or redo strings into symbols to be i18n-sed
 - [x] add SIPP code generation from car capabilities
   - [ ] add input validation of some kind?
-- [ ] add Extended SIPP codes
+- [x] add Extended SIPP codes
+  - [ ] add more adequate tests
 - [ ] add query methods for common checks (like `.diesel?` etc)
 - [ ] add pseudo codes
 - [ ] add van codes
