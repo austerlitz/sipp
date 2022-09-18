@@ -55,11 +55,15 @@ en:
     transmission:
       manual: Manual
       auto: Auto
+      robot: Robot
 
     drive:
       unspecified: Unspecified
       four_wd: 4WD
       awd: AWD
+      single: Single
+      front: Front
+      rear: Rear
 
     fuel_ac:
       unspecified_air: Unspecified Fuel/Power With Air

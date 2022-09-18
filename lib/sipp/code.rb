@@ -103,8 +103,10 @@ module SIPP
       nil
     end
 
+    SEPARATOR = ' - '
+
     def to_s
-      [category, type, transmission_drive, fuel_ac].map{|c| c.nil? ? '#N/A' : c}.join(' - ')
+      [category, type, transmission_drive, fuel_ac].map{|c| c.nil? ? '#N/A' : c}.join(SEPARATOR)
     rescue CodeError, CategoryError, TypeError, TransmissionDriveError, FuelACError
       ''
     end

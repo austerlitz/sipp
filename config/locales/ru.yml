@@ -55,11 +55,15 @@ ru:
     transmission:
       manual: МКПП
       auto: АКПП
+      robot: Робот
 
     drive:
       unspecified: привод не указан
       four_wd: 4WD
       awd: AWD
+      single: Монопривод
+      front: Передний
+      rear: Задний
 
     fuel_ac:
       unspecified_air: топливо не указано, кондиционер
