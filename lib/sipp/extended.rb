@@ -20,5 +20,11 @@ module SIPP
           capabilities[:bags_small],
         ].map{|cap| cap || '*'}.join
       end
+
+
+    attr_reader :code
+    def initialize(code = nil)
+      @code = code.to_s.strip.upcase
+    end
   end
 end
