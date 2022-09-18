@@ -11,6 +11,10 @@ module SIPP
         drive = DRIVE[capabilities[:drive]]
         fuel = FUEL[capabilities[:fuel]]
         ac = AC[capabilities[:ac]]
+        capabilities[:bags_big] = capabilities.delete(:bags) unless capabilities[:bags].nil?
+        %i[doors seats bags_big bags_small].each do |cap|
+          capabilities[cap] = nil if :unspecified == capabilities[cap]
+        end
 
         [
           category, type, transmission, drive, fuel, ac,
@@ -51,17 +55,37 @@ module SIPP
       Ac.new AC.invert[code[5]]
     end
     def doors
-      code[6]&.to_i || :unspecified
+      result = code[6]&.to_i
+      if result.zero?
+        :unspecified
+      else
+        result
+      end
     end
     def seats
-      code[7]&.to_i || :unspecified
+      result = code[7]&.to_i
+      if result.zero?
+        :unspecified
+      else
+        result
+      end
     end
     def bags
-      code[8]&.to_i || :unspecified
+      result = code[8]&.to_i
+      if result.zero?
+        :unspecified
+      else
+        result
+      end
     end
     alias_method :bags_big, :bags
     def bags_small
-      code[9]&.to_i || :unspecified
+      result = code[9]&.to_i
+      if result.zero?
+        :unspecified
+      else
+        result
+      end
     end
 
     def to_s
