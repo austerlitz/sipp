@@ -50,6 +50,8 @@ require "sipp/code"
 require "sipp/dictionary"
 require "sipp/inverted"
 require "sipp/inverted_dictionary"
+require "sipp/extended"
+require "sipp/extended_dictionary"
 require 'i18n'
 I18n.load_path += Dir[File.expand_path("config/locales") + "/*.yml"]
 # I18n.available_locales = [:en, :ru]
