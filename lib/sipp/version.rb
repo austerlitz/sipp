@@ -1,3 +1,3 @@
 module SIPP
-  VERSION = "0.1.61"
+  VERSION = "0.1.7"
 end

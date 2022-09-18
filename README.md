@@ -93,12 +93,29 @@ ua:
       manual: МКПП
       auto: АКПП      
 ```
+## Inverted
+_A very early beta. But beta than nothin'_
+
+It's also able to generate a SIPP code from car capabilities. 
+The capabilities are expected in the same format as produced by `#as_json`.
+If something invalid is supplied it generates `'*'`.
+
+```ruby
+SIPP::Inverted.generate({ category: :compact, type: :two_four_door, transmission: :manual, drive: :unspecified, fuel: :petrol, ac: :air})
+# => 'CCMV'
+SIPP::Inverted.generate({ category: :compact, type: :two_four_door, fuel: :petrol, ac: :air })
+# => 'CC*V'
+```
+
 
 ## TODO
 - [x] add i18n helpers or redo strings into symbols to be i18n-sed
+- [x] add SIPP code generation from car capabilities
+  - [ ] add input validation of some kind?
+- [ ] add Extended SIPP codes
+- [ ] add query methods for common checks (like `.diesel?` etc)
 - [ ] add pseudo codes
 - [ ] add van codes
-- [ ] add query methods for common checks (like `.diesel?` etc)
 
 
 ## Development
