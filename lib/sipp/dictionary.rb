@@ -30,7 +30,7 @@ module SIPP
       'L' => :limousine_sedan,
       'S' => :sport,
       'T' => :convertible,
-      'F' => :sUV,
+      'F' => :suv,
       'J' => :open_air_all_terrain,
       'X' => :special,
       'P' => :pick_up_2_door,
