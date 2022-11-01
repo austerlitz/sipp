@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["max@buslaev.net"]
 
   spec.summary       = %q{SIPP aka ACRISS code dictionary}
-  spec.description   = %q{Translates car SIPP codes into something meaningful}
+  spec.description   = %q{Translates car SIPP/ACRISS codes into something meaningful}
   spec.homepage      = "https://github.com/austerlitz/sipp"
   spec.license       = "MIT"
 
