@@ -5,6 +5,11 @@ module SIPP
     include ExtendedDictionary
 
       def self.generate(capabilities)
+        capabilities = capabilities.inject({}) do |caps, (k, v)|
+          val = v.respond_to?(:to_sym) ? v.to_sym : v
+          caps[k&.to_sym] = val
+          caps
+        end
         category = CATEGORY[capabilities[:category]]
         type = TYPE[capabilities[:type]]
         transmission = TRANSMISSION[capabilities[:transmission]]
