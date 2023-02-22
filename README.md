@@ -115,22 +115,23 @@ Generates an Extended-SIPP code from capabilities provided and translates capabi
 
 Should be tried and discussed.
 
+Generating an e-sipp code from capabilities:
 ```ruby
-SIPP::Extended.new('CCMFDA55').as_json
-
-{
+SIPP::Extended.generate({
         category:     :compact,
-        type:         :two_four_door,
+        type:         :two_three_door,
         transmission: :manual,
         drive:        :front,
-        fuel:         :diesel,
+        fuel:         :petrol,
         ac:           :air,
-        doors:        5,
-        seats:        5,
-        bags_big:     :unspecified,
-        bags_small:   :unspecified,
-}
-
+        doors:        2,
+        seats:        2,
+        bags_big:     3,
+        bags_small:   4,
+}) # => 'CBMFPA2234'
+```
+And capabilities from a code, just like a usual SIPP:
+```ruby
 SIPP::Extended.new('CBMFPN2234').as_json
 {
         category:     :compact,
@@ -144,7 +145,23 @@ SIPP::Extended.new('CBMFPN2234').as_json
         bags_big:     3,
         bags_small:   4,
 }
+```
 
+Puts `:unspecified` if cannot decode a capability:
+```ruby
+SIPP::Extended.new('CCMFDA55').as_json
+{
+        category:     :compact,
+        type:         :two_four_door,
+        transmission: :manual,
+        drive:        :front,
+        fuel:         :diesel,
+        ac:           :air,
+        doors:        5,
+        seats:        5,
+        bags_big:     :unspecified,
+        bags_small:   :unspecified,
+}
 ```
 
 ## TODO
