@@ -23,21 +23,21 @@ module SIPP
       front:  'F',
       rear:   'R',
       all:    'A', # AWD
-      fwd: 'X', # 4x4
+      fwd:    'X', # 4x4
     }.merge(WILDCARDS)
 
     # Fuel type. Mostly compatible with SIPP but you know... Made more human-guessable
     FUEL = {
-      compressed_gas: "G",
-      diesel:         "D",
-      electric:       "E",
-      electric_plus:  "C",
-      ethanol:        "U",
-      hybrid:         "H",
-      hybrid_plug_in: "I",
-      hydrogen:       "A",
-      multi_fuel:     "M",
-      petrol:         "P",
+      compressed_gas: 'G',
+      diesel:         'D',
+      electric:       'E',
+      electric_plus:  'C',
+      ethanol:        'U',
+      hybrid:         'H',
+      hybrid_plug_in: 'I',
+      hydrogen:       'A',
+      multi_fuel:     'M',
+      petrol:         'P',
     }.merge(WILDCARDS)
 
     # Most probably is subject to change in the future
@@ -46,8 +46,8 @@ module SIPP
       multi_zone: 'M',
       present:    'A',
       absent:     'N',
-      false       => 'N',
-      true        => 'A',
+      false    => 'N',
+      true     => 'A',
       air:        'A',
       no_air:     'N',
     }.merge(WILDCARDS)
