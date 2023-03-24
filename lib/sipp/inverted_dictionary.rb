@@ -6,9 +6,15 @@ module SIPP
 
     TRANSMISSION_DRIVE = {
       [:manual, :unspecified] => "M",
+      [:manual, :single]      => "M",
+      [:manual, :front]       => "M",
+      [:manual, :rear]        => "M",
       [:manual, :four_wd]     => "N",
       [:manual, :awd]         => "C",
       [:auto, :unspecified]   => "A",
+      [:auto, :single]        => "A",
+      [:auto, :front]         => "A",
+      [:auto, :rear]          => "A",
       [:auto, :four_wd]       => "B",
       [:auto, :awd]           => "D"
     }
